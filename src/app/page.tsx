@@ -1,10 +1,10 @@
 import About from "./components/sections/About";
-import HeroClientWrapper from "./components/sections/HeroClientWrapper";
+import Hero from "./components/sections/Hero";
 
 export default function Main() {
   return (
     <div className="relative scroll-smooth">
-      <HeroClientWrapper />
+      <Hero />
 
       <About />
 

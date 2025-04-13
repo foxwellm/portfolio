@@ -2,10 +2,10 @@
 
 import dynamic from "next/dynamic";
 
-const Hero = dynamic(() => import("./Hero"), {
+const VantaBackground = dynamic(() => import("./VantaBackground"), {
   ssr: false, // Disable SSR to avoid "document is not defined"
 });
 
 export default function HeroClientWrapper() {
-  return <Hero />;
+  return <VantaBackground />;
 }
