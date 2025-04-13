@@ -1,33 +1,19 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import mapboxgl, { LngLatLike } from "mapbox-gl";
+import { useEffect, useRef, useState } from "react";
+import mapboxgl from "mapbox-gl";
 import { addMapLayers } from "../../../../lib/map/addMapLayers";
+import { useHighlightAndPan } from "../../../../lib/map/useHighlightAndPan";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
-const highlightedCountries: string[] = [];
-
-function highlightCountry(map: mapboxgl.Map, countryName: string) {
-  if (!highlightedCountries.includes(countryName)) {
-    highlightedCountries.push(countryName);
-  }
-
-  map.setFilter("countries-highlight", ["in", "name", ...highlightedCountries]);
-}
-
-const cities = [
-  { country: "Canada", cityCoords: [-63.5724, 44.6488] },
-  { country: "Brazil", cityCoords: [-46.6333, -23.5505] },
-  // TODO: add rest
-] as { country: string; cityCoords: LngLatLike }[];
-
 export default function About() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const [isSectionInView, setIsSectionInView] = useState(false);
 
-  const currentIndexRef = useRef(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  useHighlightAndPan(mapRef.current, isSectionInView);
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
@@ -43,35 +29,36 @@ export default function About() {
 
     mapRef.current = map;
 
-    currentIndexRef.current = 0;
-    highlightedCountries.length = 0;
-
-    const spotlightCountry = () => {
-      if (currentIndexRef.current >= cities.length) {
-        return;
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            setIsSectionInView(false);
+            // Reset Map
+            map.jumpTo({
+              center: [0, 0],
+              zoom: 1.5,
+            });
+            if (map.isStyleLoaded()) {
+              map.setFilter("countries-highlight", ["in", "name", ""]);
+            }
+          } else {
+            setIsSectionInView(true);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
       }
+    );
 
-      const next = cities[currentIndexRef.current];
-      highlightCountry(map, next.country);
-
-      map.flyTo({
-        center: next.cityCoords,
-        zoom: 1.5,
-        speed: 0.5,
-        curve: 1,
-      });
-
-      currentIndexRef.current++;
-
-      timeoutRef.current = setTimeout(spotlightCountry, 3000);
-    };
-
-    timeoutRef.current = setTimeout(spotlightCountry, 1000);
+    observerRef.current.observe(mapContainerRef.current);
 
     map.on("load", () => {
       addMapLayers(map);
 
       return () => {
+        observerRef.current?.disconnect();
         map.remove();
       };
     });
@@ -86,11 +73,17 @@ export default function About() {
         <div className="flex flex-col items-center justify-center gap-8 max-w-4xl w-full px-4 py-8">
           {/* Image */}
           <div className="group perspective mb-8">
-            <img
-              src="/workprofile.jpeg"
-              alt="Profile"
-              className="w-80 h-80 rounded-2xl object-cover backface-hidden"
-            />
+            <div
+              className={`${
+                isSectionInView ? "animate-fly-in-left" : "hidden"
+              }`}
+            >
+              <img
+                src="/workprofile.jpeg"
+                alt="Profile"
+                className="w-80 h-80 rounded-2xl object-cover backface-hidden"
+              />
+            </div>
           </div>
 
           {/* Text */}
