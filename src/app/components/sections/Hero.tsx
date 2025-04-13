@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import WAVES from "vanta/dist/vanta.waves.min";
 
 export function Hero() {
-  const [vantaEffect, setVantaEffect] = useState(null);
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
   const myRef = useRef(null);
 
   useEffect(() => {
