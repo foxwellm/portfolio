@@ -1,18 +1,10 @@
-import dynamic from "next/dynamic";
-
-/* Dynymically importing the component with server side rendering disabled
-  because component relies on window 
-  https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr
-*/
-const Hero = dynamic(() => import("./components/sections/Hero"), {
-  ssr: false,
-});
 import About from "./components/sections/About";
+import HeroClientWrapper from "./components/sections/HeroClientWrapper";
 
 export default function Main() {
   return (
     <div className="relative scroll-smooth">
-      <Hero />
+      <HeroClientWrapper />
 
       <About />
 
