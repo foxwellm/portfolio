@@ -1,4 +1,12 @@
-import { Hero } from "./components/sections/Hero";
+import dynamic from "next/dynamic";
+
+/* Dynymically importing the component with server side rendering disabled
+  because component relies on window 
+  https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#with-no-ssr
+*/
+const Hero = dynamic(() => import("./components/sections/Hero"), {
+  ssr: false,
+});
 import About from "./components/sections/About";
 
 export default function Main() {
@@ -28,7 +36,7 @@ export default function Main() {
           <h2 className="text-4xl font-semibold mb-2">Contact</h2>
           <p className="max-w-xl mx-auto">Info</p>
         </div>
-      </section>    
+      </section>
     </div>
   );
 }
