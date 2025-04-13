@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import WAVES from "vanta/dist/vanta.waves.min";
 
 export function Hero() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [vantaEffect, setVantaEffect] = useState<any>(null);
   const myRef = useRef(null);
 
