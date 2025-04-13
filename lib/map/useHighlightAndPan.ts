@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { startGlobeSpin, stopGlobeSpin } from "./spinGlobe";
 import { LngLatLike } from "mapbox-gl";
 
 const highlightedCountries: string[] = [];
@@ -30,6 +31,7 @@ export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
+      stopGlobeSpin();
       return;
     }
 
@@ -43,6 +45,7 @@ export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
       }
 
       if (currentIndexRef.current >= cities.length) {
+        startGlobeSpin(map);
         return;
       }
 

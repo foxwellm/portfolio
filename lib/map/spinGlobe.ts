@@ -1,0 +1,35 @@
+let spinFrameId: number | null = null;
+
+export function startGlobeSpin(map: mapboxgl.Map) {
+  let previousTime = performance.now();
+
+  const animate = (time: number) => {
+    const deltaSeconds = (time - previousTime) / 1000;
+    previousTime = time;
+
+    const center = map.getCenter();
+    const secondsForFullRotation = 60;
+    const distancePerSecond = 360 / secondsForFullRotation;
+    const newLng = center.lng + distancePerSecond * deltaSeconds;
+
+    map.easeTo({
+      // TODO: animation is jumping straight to lat:0, need to ease
+      center: { lng: newLng, lat: 0 },
+      duration: 0,
+      easing: (n) => n,
+      bearing: 0,
+      pitch: 0,
+    });
+
+    spinFrameId = requestAnimationFrame(animate);
+  };
+
+  spinFrameId = requestAnimationFrame(animate);
+}
+
+export function stopGlobeSpin() {
+  if (spinFrameId !== null) {
+    cancelAnimationFrame(spinFrameId);
+    spinFrameId = null;
+  }
+}
