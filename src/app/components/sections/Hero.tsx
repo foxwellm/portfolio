@@ -1,4 +1,5 @@
 import { Chevron } from "../Chevron";
+import Script from "next/script";
 
 export function Hero() {
   return (
@@ -18,6 +19,30 @@ export function Hero() {
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-fadeIn duration-3000">
         <Chevron />
       </div>
+
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script id="init-vanta" strategy="afterInteractive">
+        {`
+          VANTA.WAVES({
+            el: "#homepage-background",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x1d1f20
+          });
+        `}
+      </Script>
     </section>
   );
 }

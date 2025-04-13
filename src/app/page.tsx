@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { Hero } from "./components/sections/Hero";
 import About from "./components/sections/About";
 
@@ -29,32 +28,7 @@ export default function Main() {
           <h2 className="text-4xl font-semibold mb-2">Contact</h2>
           <p className="max-w-xl mx-auto">Info</p>
         </div>
-      </section>
-
-      {/* Scripts */}
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script id="init-vanta" strategy="afterInteractive">
-        {`
-          VANTA.WAVES({
-            el: "#homepage-background",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x1d1f20
-          });
-        `}
-      </Script>
+      </section>    
     </div>
   );
 }
