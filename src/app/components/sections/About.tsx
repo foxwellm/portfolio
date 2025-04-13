@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import { addMapLayers } from "../../../../lib/map/addMapLayers";
 import { useHighlightAndPan } from "../../../../lib/map/useHighlightAndPan";
+import Image from "next/image";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -78,10 +79,12 @@ export default function About() {
                 isSectionInView ? "animate-fly-in-left" : "hidden"
               }`}
             >
-              <img
+              <Image
                 src="/workprofile.jpeg"
                 alt="Profile"
-                className="w-80 h-80 rounded-2xl object-cover backface-hidden"
+                width={320}
+                height={320}
+                className="rounded-2xl object-cover backface-hidden"
               />
             </div>
           </div>
