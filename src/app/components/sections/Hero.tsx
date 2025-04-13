@@ -1,10 +1,38 @@
+"use client";
+
 import { Chevron } from "../Chevron";
-import Script from "next/script";
+import { useEffect, useRef, useState } from "react";
+import WAVES from "vanta/dist/vanta.waves.min";
 
 export function Hero() {
+  const [vantaEffect, setVantaEffect] = useState(null);
+  const myRef = useRef(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        WAVES({
+          el: myRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: 0x1d1f20,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
+
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden">
       <div
+        ref={myRef}
         id="homepage-background"
         className="absolute top-0 left-0 w-full h-full z-0"
       />
@@ -19,30 +47,6 @@ export function Hero() {
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-fadeIn duration-3000">
         <Chevron />
       </div>
-
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script
-        src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"
-        strategy="beforeInteractive"
-      />
-      <Script id="init-vanta" strategy="afterInteractive">
-        {`
-          VANTA.WAVES({
-            el: "#homepage-background",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x1d1f20
-          });
-        `}
-      </Script>
     </section>
   );
 }
