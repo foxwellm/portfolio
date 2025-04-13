@@ -1,21 +1,13 @@
 import Script from "next/script";
 import { Hero } from "./components/sections/Hero";
+import About from "./components/sections/About";
 
 export default function Main() {
   return (
     <div className="relative scroll-smooth">
       <Hero />
 
-      {/* About Section */}
-      <section
-        id="about"
-        className="min-h-screen bg-gray-900 text-white flex items-center justify-center"
-      >
-        <div className="text-center px-4">
-          <h2 className="text-4xl font-semibold mb-2">About</h2>
-          <p className="max-w-xl mx-auto">Info</p>
-        </div>
-      </section>
+      <About />
 
       {/* Projects Section */}
       <section
