@@ -1,17 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import WAVES from "vanta/dist/vanta.waves.min";
+import { useDocumentReady } from "../../../hooks/useDocumentReady";
 
 export default function VantaBackground() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [vantaEffect, setVantaEffect] = useState<any>(null);
-  const myRef = useRef(null);
+  const vantaRef = useRef<HTMLDivElement | null>(null);
+  const vantaEffectRef = useRef<any>(null);
+  const isDocumentReady = useDocumentReady();
 
   useEffect(() => {
-    setVantaEffect(
-      WAVES({
-        el: myRef.current,
+    if (isDocumentReady) {
+      vantaEffectRef.current = WAVES({
+        el: vantaRef.current,
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
@@ -20,18 +21,20 @@ export default function VantaBackground() {
         scale: 1.0,
         scaleMobile: 1.0,
         color: 0x1d1f20,
-      })
-    );
+      });
+    }
 
     return () => {
-      if (vantaEffect) vantaEffect.destroy();
+      if (vantaEffectRef.current) {
+        vantaEffectRef.current.destroy();
+        vantaEffectRef.current = null;
+      }
     };
-  }, []);
+  }, [isDocumentReady]);
 
   return (
     <div
-      ref={myRef}
-      id="homepage-background"
+      ref={vantaRef}
       className="absolute top-0 left-0 w-full h-full z-0"
     />
   );

@@ -1,10 +1,10 @@
 import { Chevron } from "../Chevron";
-import VantaBackgroundWrapper from "../VantaBackgroundWrapper";
+import VantaBackground from "../VantaBackground";
 
 export default function Hero() {
   return (
     <section id="home" className="relative w-full min-h-screen overflow-hidden">
-      <VantaBackgroundWrapper />
+      <VantaBackground />
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">
