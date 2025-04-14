@@ -38,6 +38,13 @@ body {
 
 .animate-fly-in-left {
   animation: fly-in-left 1s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fly-in-left-delay {
+  animation: fly-in-left 1s ease-out forwards;
+  animation-delay: 0.75s;
+  opacity: 0;
 }
 
 .mapboxgl-ctrl-attrib {
