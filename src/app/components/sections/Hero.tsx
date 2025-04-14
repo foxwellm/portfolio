@@ -3,10 +3,10 @@ import VantaBackgroundWrapper from "../VantaBackgroundWrapper";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden">
+    <section id="home" className="relative w-full min-h-screen overflow-hidden">
       <VantaBackgroundWrapper />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">
           Hi, I&#39;m <span className="text-sky-400">Matthew</span>.
         </h1>
