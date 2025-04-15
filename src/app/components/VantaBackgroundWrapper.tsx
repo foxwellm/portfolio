@@ -1,9 +1,11 @@
 "use client";
 
-import { useDocumentReady } from "../../../hooks/useDocumentReady";
-import VantaBackground from "./VantaBackground";
+import dynamic from "next/dynamic";
+
+const VantaBackground = dynamic(() => import("./VantaBackground"), {
+  ssr: false,
+});
 
 export default function VantaBackgroundWrapper() {
-  const isDocumentReady = useDocumentReady();
-  return isDocumentReady ? <VantaBackground /> : <></>;
+  return <VantaBackground />;
 }
