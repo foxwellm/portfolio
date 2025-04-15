@@ -2,28 +2,24 @@
 
 import { useEffect, useRef } from "react";
 import WAVES from "vanta/dist/vanta.waves.min";
-import { useDocumentReady } from "../../../hooks/useDocumentReady";
 
 export default function VantaBackground() {
   const vantaRef = useRef<HTMLDivElement | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const vantaEffectRef = useRef<any>(null);
-  const isDocumentReady = useDocumentReady();
 
   useEffect(() => {
-    if (isDocumentReady) {
-      vantaEffectRef.current = WAVES({
-        el: vantaRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x1d1f20,
-      });
-    }
+    vantaEffectRef.current = WAVES({
+      el: vantaRef.current,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x1d1f20,
+    });
 
     return () => {
       if (vantaEffectRef.current) {
@@ -31,7 +27,7 @@ export default function VantaBackground() {
         vantaEffectRef.current = null;
       }
     };
-  }, [isDocumentReady]);
+  }, []);
 
   return (
     <div ref={vantaRef} className="absolute top-0 left-0 w-full h-full z-0" />
