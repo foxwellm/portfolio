@@ -6,7 +6,6 @@ import { addMapLayers } from "../../../../lib/map/addMapLayers";
 import { useHighlightAndPan } from "../../../../lib/map/useHighlightAndPan";
 import Image from "next/image";
 import { useIsMobile } from "../../../../hooks/useIsMobile";
-import { navRemHeight, navSpacingScaleHeight } from "../../../constants/navbar";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -71,7 +70,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className={`min-h-[calc(100vh-${navRemHeight})] scroll-mt-${navSpacingScaleHeight} bg-black text-white flex flex-col md:flex-row`}
+      className={`min-h-[calc(100vh-4rem)] scroll-mt-16 bg-black text-white flex flex-col md:flex-row`}
     >
       <div className="w-full md:w-2/5 flex items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-2 w-full max-w-4xl px-4 pt-8 pb-4">
@@ -83,7 +82,7 @@ export default function About() {
                   ? ""
                   : isSectionInView
                   ? "animate-fly-in-left"
-                  : "hidden"
+                  : "visibility-hidden"
               }`}
             >
               <Image
@@ -103,7 +102,7 @@ export default function About() {
                 ? "text-center max-w-md px-4 sm:px-2 md:px-2"
                 : isSectionInView
                 ? "animate-fly-in-left-delay text-center md:text-left max-w-md px-4 sm:px-6 md:px-8"
-                : "hidden"
+                : "visibility-hidden"
             }`}
           >
             <h2 className="text-4xl font-bold mb-2 text-sky-400">About Me</h2>
