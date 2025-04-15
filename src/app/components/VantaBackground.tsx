@@ -6,6 +6,7 @@ import { useDocumentReady } from "../../../hooks/useDocumentReady";
 
 export default function VantaBackground() {
   const vantaRef = useRef<HTMLDivElement | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const vantaEffectRef = useRef<any>(null);
   const isDocumentReady = useDocumentReady();
 
@@ -33,9 +34,6 @@ export default function VantaBackground() {
   }, [isDocumentReady]);
 
   return (
-    <div
-      ref={vantaRef}
-      className="absolute top-0 left-0 w-full h-full z-0"
-    />
+    <div ref={vantaRef} className="absolute top-0 left-0 w-full h-full z-0" />
   );
 }

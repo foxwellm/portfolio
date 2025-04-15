@@ -6,6 +6,7 @@ import { addMapLayers } from "../../../../lib/map/addMapLayers";
 import { useHighlightAndPan } from "../../../../lib/map/useHighlightAndPan";
 import Image from "next/image";
 import { useIsMobile } from "../../../../hooks/useIsMobile";
+import { navRemHeight, navSpacingScaleHeight } from "../../../constants/navbar";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -70,12 +71,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen bg-black text-white flex flex-col md:flex-row"
+      className={`min-h-[calc(100vh-${navRemHeight})] scroll-mt-${navSpacingScaleHeight} bg-black text-white flex flex-col md:flex-row`}
     >
       <div className="w-full md:w-2/5 flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center gap-8 w-full max-w-4xl px-4 py-8">
+        <div className="flex flex-col items-center justify-center gap-2 w-full max-w-4xl px-4 pt-8 pb-4">
           {/* Image */}
-          <div className="group perspective mb-8">
+          <div className="group perspective mb-4">
             <div
               className={`${
                 isMobile
@@ -105,13 +106,13 @@ export default function About() {
                 : "hidden"
             }`}
           >
-            <h2 className="text-4xl font-bold mb-6 text-sky-400">About Me</h2>
-            <p className="text-lg leading-relaxed">
+            <h2 className="text-4xl font-bold mb-2 text-sky-400">About Me</h2>
+            <p className="text-md leading-relaxed">
               I grew up across the globe — living in Canada, Brazil, Scotland,
               France, the Philippines, Gabon, and England before settling in
               Houston, TX at 18.
             </p>
-            <p className="text-lg leading-relaxed mt-4">
+            <p className="text-md leading-relaxed mt-4">
               After serving as an electrician in the U.S. Navy in Japan, I
               discovered a passion for programming through a C++ class and built
               my first web app from a PHP/MySQL book. That spark led me to

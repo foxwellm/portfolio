@@ -8,7 +8,7 @@ export function startGlobeSpin(map: mapboxgl.Map) {
     previousTime = time;
 
     const center = map.getCenter();
-    const secondsForFullRotation = 60;
+    const secondsForFullRotation = 12;
     const distancePerSecond = 360 / secondsForFullRotation;
     const newLng = center.lng - distancePerSecond * deltaSeconds;
 

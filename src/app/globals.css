@@ -25,6 +25,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes fly-in-left {
   0% {
     transform: translateX(-100%);
@@ -51,7 +55,7 @@ body {
   position: absolute !important;
   bottom: 10px !important;
   left: 10px !important;
-  z-index: 9999 !important; /* Ensure it stays above other map layers */
+  z-index: 10 !important; /* Ensure it stays above other map layers */
   background: rgba(0, 0, 0, 0.5) !important; /* Optional styling */
   padding: 4px 8px;
   font-size: 14px !important;
