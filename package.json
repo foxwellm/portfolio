@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "vercel-build": "node -v"
+    "lint": "next lint"
   },
   "dependencies": {
     "lottie-react": "^2.4.1",
