@@ -1,10 +1,10 @@
 "use client";
 
 import Lottie from "lottie-react";
-import chevronAnimation from "../../../public/animations/chevron.json";
+import chevronAnimation from "../../../../public/animations/chevron.json";
 import { useEffect, useState } from "react";
 
-export function Chevron() {
+export default function Chevron() {
   const [show, setShow] = useState(false);
   useEffect(() => {
     const timeout = setTimeout(() => setShow(true), 3000);

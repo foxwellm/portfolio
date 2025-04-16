@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import WAVES from "vanta/dist/vanta.waves.min";
-import { useDocumentReady } from "../../../hooks/useDocumentReady";
+import { useDocumentReady } from "../../../../hooks/useDocumentReady";
 
 export default function VantaBackground() {
   const vantaRef = useRef<HTMLDivElement | null>(null);

@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
-import { addMapLayers } from "../../../../lib/map/addMapLayers";
-import { useHighlightAndPan } from "../../../../lib/map/useHighlightAndPan";
+import { addMapLayers } from "../../../lib/map/addMapLayers";
+import { useHighlightAndPan } from "../../../lib/map/useHighlightAndPan";
 import Image from "next/image";
-import { useIsMobile } from "../../../../hooks/useIsMobile";
+import { useIsMobile } from "../../../hooks/useIsMobile";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 

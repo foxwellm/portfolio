@@ -1,10 +1,10 @@
-import VantaBackground from "../VantaBackground";
+import VantaBackgroundWrapper from "./VantaBackgroundWrapper";
 import HeroWrapper from "./HeroWrapper";
 
 export default function HeroWithBackground() {
   return (
     <HeroWrapper>
-      <VantaBackground />
+      <VantaBackgroundWrapper />
     </HeroWrapper>
   );
 }

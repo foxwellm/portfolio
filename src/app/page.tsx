@@ -1,7 +1,7 @@
-import About from "./components/sections/About";
-import Contact from "./components/sections/Contact";
-import HeroClientWrapper from "./components/sections/HeroClientWrapper";
-import { StickyNavbar } from "./components/StickyNavbar";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
+import StickyNavbar from "./sections/StickyNavbar";
 
 export default function Main() {
   return (
