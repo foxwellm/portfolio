@@ -1,4 +1,5 @@
 import About from "./components/sections/About";
+import Contact from "./components/sections/Contact";
 import Hero from "./components/sections/Hero";
 import { StickyNavbar } from "./components/StickyNavbar";
 
@@ -22,16 +23,7 @@ export default function Main() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="min-h-screen bg-zinc-950 text-white flex items-center justify-center"
-      >
-        <div className="text-center px-4">
-          <h2 className="text-4xl font-semibold mb-2">Contact</h2>
-          <p className="max-w-xl mx-auto">Info</p>
-        </div>
-      </section>
+      <Contact />
     </div>
   );
 }

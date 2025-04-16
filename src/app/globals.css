@@ -55,8 +55,8 @@ html {
   position: absolute !important;
   bottom: 10px !important;
   left: 10px !important;
-  z-index: 10 !important; /* Ensure it stays above other map layers */
-  background: rgba(0, 0, 0, 0.5) !important; /* Optional styling */
+  z-index: 10 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
   padding: 4px 8px;
   font-size: 14px !important;
 }
