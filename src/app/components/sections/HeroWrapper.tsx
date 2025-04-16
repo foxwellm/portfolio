@@ -1,10 +1,13 @@
 import { Chevron } from "../Chevron";
-import VantaBackgroundWrapper from "../VantaBackgroundWrapper";
 
-export default function Hero() {
+export default function HeroWrapper({
+  children,
+}: {
+  children?: React.ReactNode;
+}) {
   return (
     <section id="home" className="relative w-full min-h-screen overflow-hidden">
-      <VantaBackgroundWrapper />
+      {children}
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">

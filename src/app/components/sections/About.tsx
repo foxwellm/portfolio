@@ -70,7 +70,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className={`min-h-[calc(100vh-4rem)] scroll-mt-16 bg-black text-white flex flex-col md:flex-row px-4 py-12`}
+      className={`min-h-[calc(100vh-4rem)] scroll-mt-16 bg-black text-white flex flex-col md:flex-row`}
     >
       <div className="w-full md:w-2/5 flex items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-2 w-full max-w-4xl px-4 pt-8 pb-4">
