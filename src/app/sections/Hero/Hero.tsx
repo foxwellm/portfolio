@@ -1,14 +1,8 @@
 import Chevron from "./Chevron";
 
-export default function HeroWrapper({
-  children,
-}: {
-  children?: React.ReactNode;
-}) {
+export default function HeroWrapper() {
   return (
     <section id="home" className="relative w-full min-h-screen overflow-hidden">
-      {children}
-
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">
           Hi, I&#39;m <span className="text-sky-400">Matthew</span>.
