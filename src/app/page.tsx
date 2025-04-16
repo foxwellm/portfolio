@@ -1,12 +1,12 @@
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
-import Hero from "./components/sections/Hero";
+import HeroClientWrapper from "./components/sections/HeroClientWrapper";
 import { StickyNavbar } from "./components/StickyNavbar";
 
 export default function Main() {
   return (
     <div className="relative scroll-smooth">
-      <Hero />
+      <HeroClientWrapper />
 
       <StickyNavbar />
 

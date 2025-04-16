@@ -23,7 +23,7 @@ export default function Contact() {
       {/* Resume */}
       <div className="w-full md:w-3/5 flex items-center justify-center">
         <Image
-          src="/MatthewFoxwell 2025.jpg"
+          src="/workprofile.jpeg"
           alt="Resume"
           width={520}
           height={320}
