@@ -12,6 +12,7 @@ export const addMapLayers = (map: mapboxgl.Map) => {
     },
     filter: ["==", "name", ""],
   });
+
   map.setFog({
     range: [-1, 0.5],
     "horizon-blend": 0.02,
@@ -19,5 +20,13 @@ export const addMapLayers = (map: mapboxgl.Map) => {
     "high-color": "#809fc6",
     "space-color": "#000000",
     "star-intensity": 1,
+  });
+
+  map.addSource("ping-source", {
+    type: "geojson",
+    data: {
+      type: "FeatureCollection",
+      features: [],
+    },
   });
 };

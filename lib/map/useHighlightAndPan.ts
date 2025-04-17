@@ -1,22 +1,18 @@
 import { useEffect, useRef } from "react";
 import { startGlobeSpin, stopGlobeSpin } from "./spinGlobe";
 import { LngLatLike } from "mapbox-gl";
+import { pingCity, stopPings } from "./pingCity";
+import { PlaceLived } from "./types";
+import { placesLived } from "./constants";
 
 const highlightedCountries: string[] = [];
 
-function highlightCountry(map: mapboxgl.Map, countryName: string) {
-  if (!highlightedCountries.includes(countryName)) {
-    highlightedCountries.push(countryName);
-  }
-
+function highlightCountry(map: mapboxgl.Map, placeLived: PlaceLived) {
+  highlightedCountries.push(placeLived.country);
   map.setFilter("countries-highlight", ["in", "name", ...highlightedCountries]);
-}
 
-const cities = [
-  { country: "Canada", cityCoords: [-63.5724, 44.6488] },
-  { country: "Brazil", cityCoords: [-46.6333, -23.5505] },
-  // TODO: add rest
-] as { country: string; cityCoords: LngLatLike }[];
+  pingCity(map, placeLived);
+}
 
 export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
   const currentIndexRef = useRef(0);
@@ -32,6 +28,7 @@ export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
         clearTimeout(timeoutRef.current);
       }
       stopGlobeSpin();
+      stopPings(map);
       return;
     }
 
@@ -44,16 +41,16 @@ export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
         return;
       }
 
-      if (currentIndexRef.current >= cities.length) {
+      if (currentIndexRef.current >= placesLived.length) {
         startGlobeSpin(map);
         return;
       }
 
-      const next = cities[currentIndexRef.current];
-      highlightCountry(map, next.country);
+      const next = placesLived[currentIndexRef.current];
+      highlightCountry(map, next);
 
       map.flyTo({
-        center: next.cityCoords,
+        center: next.cityCoords as LngLatLike,
         zoom: 1.5,
         speed: 0.5,
         curve: 1,
