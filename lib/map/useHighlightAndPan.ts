@@ -27,6 +27,14 @@ export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       }
+      map.jumpTo({
+        center: [0, 0],
+        zoom: 1.5,
+      });
+      // Check style loaded in case initial render
+      if (map.isStyleLoaded()) {
+        map.setFilter("countries-highlight", ["in", "name", ""]);
+      }
       stopGlobeSpin();
       stopPings(map);
       return;

@@ -37,14 +37,6 @@ export default function About() {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
             setIsSectionInView(false);
-            // Reset Map
-            map.jumpTo({
-              center: [0, 0],
-              zoom: 1.5,
-            });
-            if (map.isStyleLoaded()) {
-              map.setFilter("countries-highlight", ["in", "name", ""]);
-            }
           } else {
             setIsSectionInView(true);
           }
