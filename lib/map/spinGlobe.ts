@@ -10,11 +10,11 @@ export function startGlobeSpin(map: mapboxgl.Map) {
     const center = map.getCenter();
     const secondsForFullRotation = 12;
     const distancePerSecond = 360 / secondsForFullRotation;
-    const newLng = center.lng - distancePerSecond * deltaSeconds;
+    center.lng = center.lng - distancePerSecond * deltaSeconds;
 
     map.easeTo({
       // TODO: animation is jumping straight to lat:0, need to ease
-      center: { lng: newLng, lat: 0 },
+      center,
       duration: 0,
       easing: (n) => n,
       bearing: 0,

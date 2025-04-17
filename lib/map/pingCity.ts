@@ -46,7 +46,7 @@ export function pingCity(map: mapboxgl.Map, placeLived: PlaceLived) {
 
   const animatePing = (time: number) => {
     if (!startTime) startTime = time;
-    let animationProgress = (time - startTime) / animationDuration;
+    const animationProgress = (time - startTime) / animationDuration;
     const circleSize = Math.min(maxPingSize, maxPingSize * animationProgress);
 
     if (!map.getLayer(layerId)) {
