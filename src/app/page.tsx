@@ -1,4 +1,4 @@
-import About from "./sections/About";
+import About from "./sections/About/About";
 import Contact from "./sections/Contact";
 import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
 import Projects from "./sections/Projects/Projects";
