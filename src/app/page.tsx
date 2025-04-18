@@ -1,7 +1,7 @@
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
-import Projects from "./sections/Projects";
+import Projects from "./sections/Projects/Projects";
 import StickyNavbar from "./sections/StickyNavbar";
 
 export default function Main() {
