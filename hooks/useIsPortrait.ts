@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 
-export function useIsMobile(): boolean {
-  const [isMobile, setIsMobile] = useState(false);
+export function useIsPortrait(): boolean {
+  const [isPortrait, setIsPortrait] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
     const handleChange = () => {
-      setIsMobile(mediaQuery.matches);
+      setIsPortrait(mediaQuery.matches);
     };
 
     handleChange();
@@ -18,5 +18,5 @@ export function useIsMobile(): boolean {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  return isMobile;
+  return isPortrait;
 }
