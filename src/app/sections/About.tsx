@@ -51,12 +51,12 @@ export default function About() {
 
     map.on("load", () => {
       addMapLayers(map);
-
-      return () => {
-        observerRef.current?.disconnect();
-        map.remove();
-      };
     });
+    
+    return () => {
+      observerRef.current?.disconnect();
+      map.remove();
+    };
   }, []);
 
   return (

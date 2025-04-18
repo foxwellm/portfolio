@@ -6,24 +6,41 @@ export default function Projects() {
       id="projects"
       className="min-h-[calc(100vh-4rem)] scroll-mt-16 bg-red-900 text-white px-8 py-16"
     >
-      <div className="flex flex-col lg:flex-row items-center w-full md:gap-16">
+      <div className="flex flex-col lg:flex-row items-center w-full gap-16">
         {/* Images */}
-        <div className="flex justify-center md:translate-x-12 w-full lg:w-auto">
-          <img
-            src="projects/Example New.png"
-            alt="Example New"
-            className="md:w-64 lg:w-50 xl:w-64 2xl:w-84"
-          />
-          <img
-            src="projects/Example Note.png"
-            alt="Example Note"
-            className="md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-8 -translate-x-12"
-          />
-          <img
-            src="projects/Example Checklist.png"
-            alt="Example Checklist"
-            className="md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-16 -translate-x-24"
-          />
+        <div className="flex justify-center translate-x-12 -translate-y-8 w-full lg:w-auto">
+          <div className="relative sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84">
+            <Image
+              src="/projects/Example New.png"
+              alt="Example New"
+              layout="responsive"
+              width={500}
+              height={1000}
+              className="object-contain"
+            />
+          </div>
+
+          <div className="relative sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-8 -translate-x-12">
+            <Image
+              src="/projects/Example Note.png"
+              alt="Example Note"
+              layout="responsive"
+              width={500}
+              height={1000}
+              className="object-contain"
+            />
+          </div>
+
+          <div className="relative sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-16 -translate-x-24">
+            <Image
+              src="/projects/Example Checklist.png"
+              alt="Example Checklist"
+              layout="responsive"
+              width={500}
+              height={1000}
+              className="object-contain"
+            />
+          </div>
         </div>
 
         {/* Info */}
