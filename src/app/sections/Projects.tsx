@@ -1,15 +1,29 @@
+"use client";
+
 import Image from "next/image";
+import { useObserveThreshold } from "../../../hooks/useObserveThreshold";
+import { useRef } from "react";
 
 export default function Projects() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isContainerInView = useObserveThreshold(sectionRef);
+
   return (
     <section
       id="projects"
+      ref={sectionRef}
       className="min-h-[calc(100vh-4rem)] scroll-mt-16 bg-red-900 text-white px-8 py-16"
     >
       <div className="flex flex-col lg:flex-row items-center w-full gap-16">
         {/* Images */}
         <div className="flex justify-center translate-x-12 -translate-y-8 w-full lg:w-auto">
-          <div className="relative sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84">
+          <div
+            className={`sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 ${
+              isContainerInView
+                ? "animate-fly-in-left-delay-500"
+                : "animate-fly-out-left-delay-500"
+            }`}
+          >
             <Image
               src="/projects/Example New.png"
               alt="Example New"
@@ -20,7 +34,13 @@ export default function Projects() {
             />
           </div>
 
-          <div className="relative sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-8 -translate-x-12">
+          <div
+            className={`sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-8 -translate-x-12 ${
+              isContainerInView
+                ? "animate-fly-in-left-delay-250"
+                : "animate-fly-out-left-delay-250"
+            }`}
+          >
             <Image
               src="/projects/Example Note.png"
               alt="Example Note"
@@ -31,7 +51,11 @@ export default function Projects() {
             />
           </div>
 
-          <div className="relative sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-16 -translate-x-24">
+          <div
+            className={`sm:w-80 md:w-64 lg:w-50 xl:w-64 2xl:w-84 translate-y-16 -translate-x-24 ${
+              isContainerInView ? "animate-fly-in-left" : "animate-fly-out-left"
+            }`}
+          >
             <Image
               src="/projects/Example Checklist.png"
               alt="Example Checklist"

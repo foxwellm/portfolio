@@ -51,13 +51,13 @@ export default function About() {
           {/* Image */}
           <div className="group perspective mb-4">
             <div
-              className={`${
+              className={
                 isMobile
                   ? ""
                   : isContainerInView
                   ? "animate-fly-in-left"
-                  : "visibility-hidden"
-              }`}
+                  : "invisible"
+              }
             >
               <Image
                 src="/workprofile.jpeg"
@@ -71,13 +71,13 @@ export default function About() {
 
           {/* Text */}
           <div
-            className={`${
+            className={
               isMobile
                 ? "text-center max-w-md px-4 sm:px-2 md:px-2"
                 : isContainerInView
-                ? "animate-fly-in-left-delay text-center md:text-left max-w-md px-4 sm:px-6 md:px-8"
-                : "visibility-hidden"
-            }`}
+                ? "animate-fly-in-left text-center md:text-left max-w-md px-4 sm:px-6 md:px-8"
+                : "invisible"
+            }
           >
             <h2 className="text-4xl font-bold mb-2 text-sky-400">About Me</h2>
             <p className="text-md leading-relaxed">
