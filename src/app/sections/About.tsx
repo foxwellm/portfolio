@@ -1,22 +1,22 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import { addMapLayers } from "../../../lib/map/addMapLayers";
 import { useHighlightAndPan } from "../../../lib/map/useHighlightAndPan";
 import Image from "next/image";
 import { useIsMobile } from "../../../hooks/useIsMobile";
+import { useObserveThreshold } from "../../../hooks/useObserveThreshold";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 export default function About() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
-  const [isSectionInView, setIsSectionInView] = useState(false);
   const isMobile = useIsMobile();
+  const isContainerInView = useObserveThreshold(mapContainerRef);
 
-  useHighlightAndPan(mapRef.current, isSectionInView);
+  useHighlightAndPan(mapRef.current, isContainerInView);
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
@@ -32,29 +32,11 @@ export default function About() {
 
     mapRef.current = map;
 
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            setIsSectionInView(false);
-          } else {
-            setIsSectionInView(true);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    observerRef.current.observe(mapContainerRef.current);
-
     map.on("load", () => {
       addMapLayers(map);
     });
-    
+
     return () => {
-      observerRef.current?.disconnect();
       map.remove();
     };
   }, []);
@@ -72,7 +54,7 @@ export default function About() {
               className={`${
                 isMobile
                   ? ""
-                  : isSectionInView
+                  : isContainerInView
                   ? "animate-fly-in-left"
                   : "visibility-hidden"
               }`}
@@ -92,7 +74,7 @@ export default function About() {
             className={`${
               isMobile
                 ? "text-center max-w-md px-4 sm:px-2 md:px-2"
-                : isSectionInView
+                : isContainerInView
                 ? "animate-fly-in-left-delay text-center md:text-left max-w-md px-4 sm:px-6 md:px-8"
                 : "visibility-hidden"
             }`}
