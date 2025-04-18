@@ -49,7 +49,7 @@ export function pingCity(map: mapboxgl.Map, placeLived: PlaceLived) {
     const animationProgress = (time - startTime) / animationDuration;
     const circleSize = Math.min(maxPingSize, maxPingSize * animationProgress);
 
-    if (!map.getLayer(layerId)) {
+    if (!map?.getLayer(layerId)) {
       // Map has gone out of View and pings have reset
       return;
     }
