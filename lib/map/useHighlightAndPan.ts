@@ -69,6 +69,6 @@ export function useHighlightAndPan(map: mapboxgl.Map | null, inView: boolean) {
       timeoutRef.current = setTimeout(spotlightCountry, 3000);
     };
 
-    timeoutRef.current = setTimeout(spotlightCountry, 3000);
+    timeoutRef.current = setTimeout(spotlightCountry, 1500);
   }, [map, inView]);
 }
