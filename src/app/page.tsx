@@ -4,11 +4,13 @@ import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
 import Projects from "./sections/Projects/Projects";
 import StickyNavbar from "./sections/StickyNavbar";
 
+const sections = ["home", "about", "projects", "contact"];
+
 export default function Main() {
   return (
     <div className="relative scroll-smooth">
+      <StickyNavbar sections={sections} />
       <HeroClientWrapper />
-      <StickyNavbar />
       <About />
       <Projects />
       <Contact />
