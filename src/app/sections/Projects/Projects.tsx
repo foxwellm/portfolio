@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex min-h-[calc(100vh-4rem)] scroll-mt-16 bg-gray-950 text-white px-8"
+      className="flex py-32 lg:py-0 lg:min-h-[calc(100vh-4rem)] scroll-mt-16 bg-gray-950 text-white px-8"
     >
       <div className="flex flex-col lg:flex-row items-center w-full gap-16">
         <PhoneDisplay />
