@@ -10,7 +10,12 @@ export default function Navbar({ sections }: { sections: string[] }) {
   const [navOpacity, setNavOpacity] = useState(false);
 
   useEffect(() => {
-    // TODO: show and disable if starting lower
+    if (window.scrollY > 100) {
+      setNavHeight(true);
+      setNavOpacity(true);
+      return;
+    }
+
     const onScroll = () => {
       setNavHeight(window.scrollY > 64);
 
@@ -26,19 +31,19 @@ export default function Navbar({ sections }: { sections: string[] }) {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-20 bg-gray-950 border-b border-white/10 text-white px-6 flex items-center justify-between 
+      className={`fixed top-0 w-full z-20 bg-gray-950 border-b border-white/10 text-white px-6 flex items-center justify-center md:justify-between 
       transition-opacity duration-500 overflow-hidden
       ${navHeight ? "h-16" : "h-0"} 
       ${navOpacity ? "opacity-100" : "opacity-0"}`}
     >
-      <div className="w-24" />
+      <div className="w-24 hidden md:block" />
 
-      <div className="flex gap-16 justify-center">
+      <div className="flex gap-10 md:gap-16 justify-center">
         {sections.map((section) => (
           <a
             key={section}
             href={`#${section}`}
-            className={`transition lg:text-sm lg:text-xl ${
+            className={`transition text-sm md:text-xl ${
               activeSection === section
                 ? "text-sky-400 scale-110"
                 : "hover:text-gray-300"
@@ -52,7 +57,7 @@ export default function Navbar({ sections }: { sections: string[] }) {
       <a
         href="/MatthewFoxwellResume.pdf"
         download
-        className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300"
+        className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300 hidden md:block"
       >
         Download Resume
       </a>

@@ -14,6 +14,14 @@ export default function HeroWrapper({
           Hi, I&#39;m <span className="text-sky-400">Matthew</span>.
         </h1>
         <p className="text-xl max-w-xl">I&#39;m a full stack web developer.</p>
+
+        <a
+          href="/MatthewFoxwellResume.pdf"
+          download
+          className="mt-6 bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300 md:hidden"
+        >
+          Download Resume
+        </a>
       </div>
 
       <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-fadeIn duration-3000">
