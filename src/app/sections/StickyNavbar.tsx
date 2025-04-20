@@ -10,9 +10,14 @@ export default function Navbar({ sections }: { sections: string[] }) {
   const [navOpacity, setNavOpacity] = useState(false);
 
   useEffect(() => {
+    // TODO: show and disable if starting lower
     const onScroll = () => {
       setNavHeight(window.scrollY > 64);
-      setNavOpacity(window.scrollY > 100);
+
+      if (window.scrollY > 100) {
+        setNavOpacity(true);
+        window.removeEventListener("scroll", onScroll);
+      }
     };
 
     window.addEventListener("scroll", onScroll);
@@ -47,7 +52,7 @@ export default function Navbar({ sections }: { sections: string[] }) {
       <a
         href="/MatthewFoxwellResume.pdf"
         download
-        className="bg-sky-700 hover:bg-sky-600 text-white px-4 py-2 rounded-md text-sm transition duration-300"
+        className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300"
       >
         Download Resume
       </a>
