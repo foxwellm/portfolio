@@ -10,12 +10,14 @@ export default function Projects() {
       <div className="flex flex-col lg:flex-row items-center w-full gap-16">
         <PhoneDisplay />
 
-        {/* Info */}
         <div className="lg:text-left max-w-md">
-          <h3 className="text-3xl font-bold mb-2">ListTaskTick</h3>
-          <p className="text-gray-300 mb-4">React Native mobile application</p>
+          <h3 className="text-3xl text-sky-400 font-bold mb-2">ListTaskTick</h3>
+          <p className="text-gray-300 mb-4">
+            React Native / TypeScript list-making application that implements
+            CRUD functionality.
+          </p>
 
-          <div className="flex gap-4 mt-4 justify-center lg:justify-start">
+          <div className="flex gap-8 mt-4 justify-center lg:justify-start">
             <a
               href="https://apps.apple.com/us/app/listtasktick/id6723865056"
               target="_blank"
@@ -26,7 +28,6 @@ export default function Projects() {
                 alt="Download on the App Store"
                 width={260}
                 height={20}
-                className=""
               />
             </a>
             <a
