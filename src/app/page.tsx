@@ -1,5 +1,6 @@
 import About from "./sections/About/About";
-import Contact from "./sections/Contact";
+import Contact from "./sections/Contact/Contact";
+import Footer from "./sections/Footer";
 import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
 import Projects from "./sections/Projects/Projects";
 import StickyNavbar from "./sections/StickyNavbar";
@@ -14,6 +15,7 @@ export default function Main() {
       <About />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }
