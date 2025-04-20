@@ -11,7 +11,7 @@ export default function Profile() {
   return (
     <div
       ref={containerRef}
-      className="w-full lg:w-2/5 flex items-center justify-center flex-col px-4"
+      className="w-full lg:w-2/5 flex items-center justify-center flex-col px-0 lg:px-4 py-4 lg:py-0"
     >
       {/* Image */}
       <div

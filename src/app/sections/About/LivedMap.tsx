@@ -38,7 +38,7 @@ export default function LivedMap() {
     };
   }, []);
   return (
-    <div className="w-auto lg:w-3/5 h-auto">
+    <div className="w-auto lg:w-3/5 lg:h-auto aspect-square lg:aspect-auto">
       <div ref={mapContainerRef} className="h-full w-full relative" />
     </div>
   );
