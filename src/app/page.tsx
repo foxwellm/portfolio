@@ -3,7 +3,7 @@ import Contact from "./sections/Contact/Contact";
 import Footer from "./sections/Footer";
 import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
 import Projects from "./sections/Projects/Projects";
-import StickyNavbar from "./sections/StickyNavbar";
+import StickyNavbar from "./sections/Navbar";
 
 const sections = ["home", "about", "projects", "contact"];
 
