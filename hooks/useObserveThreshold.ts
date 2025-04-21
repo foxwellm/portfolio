@@ -1,7 +1,8 @@
 import { RefObject, useEffect, useRef, useState } from "react";
 
 export function useObserveThreshold(
-  containerRef: RefObject<HTMLDivElement | null>
+  containerRef: RefObject<HTMLDivElement | null>,
+  threshold: number = 0.5
 ) {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const [isInView, setIsInView] = useState(false);
@@ -20,7 +21,7 @@ export function useObserveThreshold(
         });
       },
       {
-        threshold: 0.5,
+        threshold,
       }
     );
 

@@ -8,7 +8,7 @@ import { useObserveThreshold } from "../../../../hooks/useObserveThreshold";
 export default function Chevron() {
   const containerRef = useRef(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const isInView = useObserveThreshold(containerRef);
+  const isInView = useObserveThreshold(containerRef, 0);
   const [showAnimation, setShowAnimation] = useState(false);
   const [userNotMoving, setUserNotMoving] = useState(false);
   const [hasLeftView, setHasLeftView] = useState(false);

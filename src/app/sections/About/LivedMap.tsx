@@ -12,7 +12,7 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 export default function LivedMap() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
-  const isContainerInView = useObserveThreshold(mapContainerRef);
+  const isContainerInView = useObserveThreshold(mapContainerRef, 0.2);
   const { width, isBelowBreakpoint } = useWindowResize(1024);
 
   useHighlightAndPan(mapRef.current, isContainerInView);
