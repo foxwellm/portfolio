@@ -6,10 +6,15 @@ export default function HeroWrapper({
   scrollDownIndicator?: React.ReactNode;
 }) {
   return (
-    <section id="home" className="relative w-full min-h-screen overflow-hidden">
+    <section
+      id="home"
+      className="relative w-full min-h-screen overflow-hidden flex flex-col justify-around items-center"
+    >
       {background}
 
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center text-white px-4">
+      <div className="h-50" />
+
+      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">
           Hi, I&#39;m <span className="text-sky-400">Matthew</span>.
         </h1>
@@ -20,13 +25,11 @@ export default function HeroWrapper({
           download
           className="mt-6 bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300 md:hidden"
         >
-          Download Resume
+          Download CV
         </a>
       </div>
 
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-fadeIn duration-3000">
-        {scrollDownIndicator}
-      </div>
+      {scrollDownIndicator ? scrollDownIndicator : <div className="h-50" />}
     </section>
   );
 }

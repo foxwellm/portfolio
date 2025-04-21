@@ -59,7 +59,7 @@ export default function Navbar({ sections }: { sections: string[] }) {
         download
         className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300 hidden md:block"
       >
-        Download Resume
+        Download CV
       </a>
     </nav>
   );
