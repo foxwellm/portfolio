@@ -5,6 +5,7 @@ import mapboxgl from "mapbox-gl";
 import { addMapLayers } from "../../../../lib/map/addMapLayers";
 import { useHighlightAndPan } from "../../../../lib/map/useHighlightAndPan";
 import { useObserveThreshold } from "../../../../hooks/useObserveThreshold";
+import { useWindowResize } from "../../../../hooks/useWindowResize";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
@@ -12,6 +13,7 @@ export default function LivedMap() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const isContainerInView = useObserveThreshold(mapContainerRef);
+  const { width, isBelowBreakpoint } = useWindowResize(1024);
 
   useHighlightAndPan(mapRef.current, isContainerInView);
 
@@ -37,8 +39,12 @@ export default function LivedMap() {
       map.remove();
     };
   }, []);
+
   return (
-    <div className="w-auto lg:w-3/5 lg:h-auto aspect-square lg:aspect-auto">
+    <div
+      style={isBelowBreakpoint ? { height: `${width}px` } : undefined}
+      className="lg:w-3/5 h-auto"
+    >
       <div ref={mapContainerRef} className="h-full w-full relative" />
     </div>
   );
