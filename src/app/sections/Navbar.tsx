@@ -31,8 +31,8 @@ export default function Navbar({ sections }: { sections: string[] }) {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-20 bg-gray-950 border-b border-white/10 text-white px-6 flex items-center justify-center md:justify-between 
-      transition-opacity duration-500 overflow-hidden
+      className={`fixed w-full z-20 bg-gray-950 border-b border-white/10 text-white px-6 flex items-center justify-center md:justify-between 
+      transition-opacity duration-500 
       ${navHeight ? "h-16" : "h-0"} 
       ${navOpacity ? "opacity-100" : "opacity-0"}`}
     >

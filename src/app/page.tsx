@@ -9,13 +9,13 @@ const sections = ["home", "about", "projects", "contact"];
 
 export default function Main() {
   return (
-    <div className="relative scroll-smooth">
+    <>
       <StickyNavbar sections={sections} />
       <HeroClientWrapper />
       <About />
       <Projects />
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
