@@ -27,6 +27,7 @@ export default function LivedMap() {
       zoom: 1.5,
       interactive: false,
       projection: "globe",
+      trackResize: true,
     });
 
     mapRef.current = map;
