@@ -34,6 +34,7 @@ export default function LivedMap() {
 
     map.on("load", () => {
       addMapLayers(map);
+      map.resize();
     });
 
     return () => {
@@ -44,7 +45,7 @@ export default function LivedMap() {
   return (
     <div
       style={isBelowBreakpoint ? { height: `${width}px` } : undefined}
-      className="lg:w-3/5 h-auto"
+      className="lg:w-3/5 lg:h-auto max-h-[calc(100vh-4rem)]"
     >
       <div ref={mapContainerRef} className="h-full w-full relative" />
     </div>
