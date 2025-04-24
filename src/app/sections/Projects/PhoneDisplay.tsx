@@ -23,7 +23,6 @@ export default function PhoneDisplay() {
         <Image
           src="/projects/Example New.png"
           alt="Example New"
-          layout="responsive"
           width={500}
           height={1000}
           className="object-contain"
@@ -40,7 +39,6 @@ export default function PhoneDisplay() {
         <Image
           src="/projects/Example Note.png"
           alt="Example Note"
-          layout="responsive"
           width={500}
           height={1000}
           className="object-contain"
@@ -55,7 +53,6 @@ export default function PhoneDisplay() {
         <Image
           src="/projects/Example Checklist.png"
           alt="Example Checklist"
-          layout="responsive"
           width={500}
           height={1000}
           className="object-contain"

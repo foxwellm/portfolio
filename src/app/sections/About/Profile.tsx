@@ -22,7 +22,6 @@ export default function Profile() {
         <Image
           src="/workprofile.jpeg"
           alt="Profile"
-          layout="responsive"
           width={320}
           height={320}
           className="rounded-2xl object-cover"

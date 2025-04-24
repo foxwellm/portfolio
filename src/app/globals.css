@@ -30,6 +30,7 @@
 
 html,
 body {
+  /* NOTE: Prevent x-transformed divs from spilling outside body and making larger (Project phone images) */
   overflow-x: hidden;
 }
 
@@ -112,7 +113,7 @@ html {
   background-color: rgba(255, 94, 94, 1);
   border-radius: 50%;
   position: relative;
-  transform: translate(-50%, -50%); /* Center dot */
+  transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 10;
 }
