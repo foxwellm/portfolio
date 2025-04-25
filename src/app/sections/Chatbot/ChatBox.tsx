@@ -36,12 +36,12 @@ const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(
     return (
       <div
         ref={ref}
-        className={`fixed bottom-[1rem] right-[1rem] w-full max-w-[500px] z-50 transition-all duration-300 ease-in-out 
-    ${isChatOpen ? "h-[500px] opacity-100" : "h-0 opacity-0"}`}
+        className={`relative bottom-[1rem] right-[1rem] w-full max-w-[500px] z-50 transition-all duration-300 ease-in-out  
+    ${isChatOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
       >
-        <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg h-full flex flex-col border border-gray-300 dark:border-gray-700 overflow-hidden">
+        <div className="bg-gray-900 rounded-xl shadow-lg flex flex-col border border-gray-300 border-gray-700 overflow-hidden">
           {/* Chat messages */}
-          <div className="flex-grow overflow-y-auto p-4 gap-2 flex flex-col">
+          <div className="overflow-y-auto max-h-[300px] p-4 gap-2 flex flex-col">
             {messages.map((msg, idx) => (
               <div
                 key={idx}

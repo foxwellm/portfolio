@@ -12,7 +12,7 @@ export default function HeroWrapper({
     >
       {background}
 
-      <div className="h-50" />
+      {scrollDownIndicator ? scrollDownIndicator : <div className="h-50" />}
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4">
         <h1 className="text-5xl font-bold mb-4">
@@ -29,7 +29,7 @@ export default function HeroWrapper({
         </a>
       </div>
 
-      {scrollDownIndicator ? scrollDownIndicator : <div className="h-50" />}
+      <div className="h-50" />
     </section>
   );
 }
