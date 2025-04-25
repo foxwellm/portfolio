@@ -1,0 +1,90 @@
+﻿Matthew Foxwell
+Portfolio: MatthewFoxwell.com
+	Github: github.com/foxwellm
+	LinkedIn: linkedin.com/in/foxwellmw
+	foxwellmw@gmail.com
+	(281) 467-6225
+	Spokane Valley, WA
+	
+
+TECHNICAL SKILLS
+	
+
+* Proficient: TypeScript, JavaScript, React, Node.js, Jest, Mapbox GL JS, Redux, Redux Toolkit, Material-UI, Git
+* Experienced: React Native, AWS, DynamoDB, MongoDB, Storybook, Postman
+* Familiar: Python, Vue.js, Angular, Next.js, Tailwind CSS
+
+
+SUMMARY
+	
+
+Skilled software engineer with 5+ years of experience building and maintaining production-grade web applications. Proficient in TypeScript, React, and Node.js, with a strong foundation in software architecture and design patterns. 
+U.S. Navy veteran with experience in technical problem-solving and teamwork under pressure.
+
+
+PROFESSIONAL EXPERIENCE
+	
+
+Full Stack Engineer - DataAnnotation (Remote) (Part-time)        January 2024 - Current
+[ JavaScript, Python ]
+
+
+*  Evaluate and optimize AI-generated code for correctness, performance, and readability.
+
+
+*  Author detailed explanations and high-quality code snippets to train AI tools and enhance chatbot adaptability.
+
+
+Software Engineer - Atomic Financial - Salt Lake City UT (Remote)        March 2022 - October 2023
+[ Node.js, TypeScript, MongoDB, Jest, VueJS ]
+
+
+* Built scalable scraping pipelines for 60+ payroll providers using Puppeteer and network request handling.
+
+
+* Architected a new data model for storing verification results with built-in validation, error handling, and test coverage. Designed the model using TypeScript and Regex to sanitize and verify inputs before saving to MongoDB, preventing invalid data from reaching customers and improving customer trust in the reliability of the data.
+
+
+* Upgraded internal Vue.js tools to streamline dev workflows and improve UI functionality.
+
+
+Software Engineer - LJA Engineering - Houston TX        July 2019 - March 2022
+[ Mapbox GL JS, React, Redux, Redux Toolkit, AWS, DynamoDB, Material-UI, Storybook, Jest ]
+
+
+* Developed and maintained full-stack applications focused on asset location and file management.
+
+
+* Delivered interactive mapping solutions using Mapbox GL JS and AWS services for real-time geospatial data.
+
+
+* Maintained legacy applications written in Angular or AngularJS with relational databases.
+
+
+EDUCATION
+	
+
+University of Houston           B.S. Electrical Power Engineering Technology
+
+
+Turing School of Software and Design - Front-End Program - Denver CO        October 2018 - April 2019
+
+
+* Completed 1500+ hours of immersive training in JavaScript, React, Redux, and Node.js
+
+
+PROJECTS
+	
+
+ListTaskTick         Available on Google Play and Apple Store
+[ React Native, TypeScript]
+
+
+* Mobile list-making application that implements CRUD functionality across Android and iOS platforms.
+
+
+Portfolio Website - github.com/foxwellm/portfolio        MatthewFoxwell.com
+[ TypeScript, Next.js, Tailwind CSS, Mapbox GL JS, Vercel ]
+
+
+* Built a personal portfolio to showcase projects, resume, and a map with a responsive design, interactive animations, and fast serverless hosting on Vercel.

@@ -10,11 +10,15 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@langchain/core": "^0.3.47",
+    "@langchain/openai": "^0.5.6",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+    "langchain": "^0.3.24",
     "lottie-react": "^2.4.1",
     "mapbox-gl": "^3.11.0",
     "next": "15.3.0",
+    "openai": "^4.96.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "vanta": "^0.5.24"
