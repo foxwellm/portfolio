@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col items-center justify-evenly bg-gray-950 h-36 border-t border-white/10 text-gray-400 text-sm">
+    <footer className="flex flex-col items-center justify-evenly py-4 bg-gray-950 h-36 border-t border-white/10 text-gray-400 text-sm">
       <div className="flex gap-12">
         <a
           href="https://github.com/your-username"
@@ -28,6 +28,13 @@ export default function Footer() {
           <span>LinkedIn</span>
         </a>
       </div>
+        <a
+          href="https://www.flaticon.com/free-icons/chatbot"
+          title="chatbot icons"
+          className="mt-4"
+        >
+          Chatbot icons created by littleicon - Flaticon
+        </a>
 
       <p className="text-center mt-4">
         &copy; {new Date().getFullYear()} Matthew Foxwell. All rights reserved.

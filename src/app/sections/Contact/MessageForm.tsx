@@ -33,7 +33,7 @@ export default function MessageForm() {
 
       <button
         type="submit"
-        className="flex bg-sky-600 hover:bg-sky-500 items-center justify-center gap-4 text-white px-6 py-3 rounded-lg font-semibold transition cursor-pointer"
+        className="flex bg-sky-600 hover:bg-sky-500 items-center justify-center gap-4 text-white px-6 py-3 rounded-lg font-semibold transition"
       >
         Send Message
       </button>

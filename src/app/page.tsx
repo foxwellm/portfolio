@@ -4,6 +4,7 @@ import Footer from "./sections/Footer";
 import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
 import Projects from "./sections/Projects/Projects";
 import StickyNavbar from "./sections/Navbar";
+import Chatbot from "./sections/Chatbot/Chatbot";
 
 const sections = ["home", "about", "projects", "contact"];
 
@@ -16,6 +17,7 @@ export default function Main() {
       <Projects />
       <Contact />
       <Footer />
+      <Chatbot />
     </>
   );
 }
