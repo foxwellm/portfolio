@@ -12,10 +12,8 @@ export default function HeroWrapper({
     >
       {background}
 
-      {scrollDownIndicator ? scrollDownIndicator : <div className="h-50" />}
-
-      <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4">
-        <h1 className="text-5xl font-bold mb-4">
+      <div className="relative z-10 gap-4 flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 className="text-5xl font-bold">
           Hi, I&#39;m <span className="text-sky-400">Matthew</span>.
         </h1>
         <p className="text-xl max-w-xl">I&#39;m a full stack web developer.</p>
@@ -23,13 +21,13 @@ export default function HeroWrapper({
         <a
           href="/MatthewFoxwellResume.pdf"
           download
-          className="mt-6 bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300 md:hidden"
+          className="bg-sky-700 hover:bg-sky-800 py-2 text-white px-4 rounded-md text-sm transition duration-300 md:hidden"
         >
           Download CV
         </a>
-      </div>
 
-      <div className="h-50" />
+        {scrollDownIndicator && scrollDownIndicator}
+      </div>
     </section>
   );
 }

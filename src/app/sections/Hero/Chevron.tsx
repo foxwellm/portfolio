@@ -35,7 +35,7 @@ export default function Chevron() {
   }, [isInView, userNotMoving, hasLeftView]);
 
   return (
-    <div ref={containerRef} className="w-50 h-50">
+    <div ref={containerRef} className="w-40 h-40">
       {showAnimation && (
         <Lottie animationData={chevronAnimation} loop autoplay />
       )}
