@@ -44,6 +44,11 @@ html {
   scroll-behavior: smooth;
 }
 
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
 @keyframes fly-in-left {
   0% {
     transform: translateX(-100%);
