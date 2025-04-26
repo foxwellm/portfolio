@@ -26,7 +26,11 @@ export default function HeroWrapper({
           Download CV
         </a>
 
-        {scrollDownIndicator && scrollDownIndicator}
+        {scrollDownIndicator ? (
+          scrollDownIndicator
+        ) : (
+          <div className="w-40 h-40" />
+        )}
       </div>
     </section>
   );
