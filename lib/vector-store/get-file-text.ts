@@ -3,7 +3,7 @@ import fs from "fs";
 
 // NOTE: Currently only supports .txt and .md files
 export function getFileText(filePath: string) {
-  const absoluteFilePath = path.resolve(filePath);
+  const absoluteFilePath = path.resolve(process.cwd(), filePath);
 
   let fileText = "";
   if (fs.existsSync(absoluteFilePath)) {
