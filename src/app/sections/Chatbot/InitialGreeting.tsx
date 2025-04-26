@@ -38,7 +38,7 @@ export default function InitialGreeting() {
     <div
       className={`absolute right-[6rem] -top-[6rem] p-3 w-64 
     rounded-lg text-sm text-black bg-gray-200 self-start text-left 
-    transition-opacity duration-500 
+    transition-opacity duration-500 cursor-default
     ${greetingOpacity ? "opacity-100" : "opacity-0"}`}
     >
       {initialBotMessage}
