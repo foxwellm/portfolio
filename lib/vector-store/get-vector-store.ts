@@ -11,15 +11,12 @@ export default async function getVectorStore(): Promise<MemoryVectorStore> {
   const allDocs: Document[] = [];
   try {
     const resumeChunks = await getTextChunks(
-      "lib/vector-store/sources/MatthewFoxwellResume.txt",
+      "MatthewFoxwellResume.txt",
       "resume"
     );
     allDocs.push(...resumeChunks);
 
-    const portfolioChunks = await getTextChunks(
-      "lib/vector-store/sources/portfolio.md",
-      "portfolio"
-    );
+    const portfolioChunks = await getTextChunks("portfolio.md", "portfolio");
     allDocs.push(...portfolioChunks);
 
     const embeddings = new OpenAIEmbeddings();

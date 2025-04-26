@@ -2,14 +2,14 @@ import path from "path";
 import fs from "fs";
 
 // NOTE: Currently only supports .txt and .md files
-export function getFileText(filePath: string) {
-  const absoluteFilePath = path.resolve(process.cwd(), filePath);
+export function getFileText(relativePath: string) {
+  const absolutePath = path.join(process.cwd(), "public/chatbot", relativePath);
 
   let fileText = "";
-  if (fs.existsSync(absoluteFilePath)) {
-    fileText = fs.readFileSync(absoluteFilePath, "utf8");
+  if (fs.existsSync(absolutePath)) {
+    fileText = fs.readFileSync(absolutePath, "utf8");
   } else {
-    console.error(`${filePath} is not a valid path`);
+    console.error(`${absolutePath} is not a valid path`);
   }
 
   return fileText;

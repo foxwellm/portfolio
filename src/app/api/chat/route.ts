@@ -14,9 +14,7 @@ export async function POST(req: NextRequest) {
     const context = relevantDocs.map((doc) => doc.pageContent).join("\n");
 
     const prompt = `Use the following resume data to answer the question:\n\n${context}\n\nQ: ${message}\nA:`;
-    const instructions = getFileText(
-      "lib/vector-store/sources/prompt-instructions.txt"
-    );
+    const instructions = getFileText("prompt-instructions.txt");
 
     const response = await client.responses.create({
       model: "gpt-4.1",
