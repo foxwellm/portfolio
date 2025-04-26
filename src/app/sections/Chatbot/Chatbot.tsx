@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import ChatBox from "./ChatBox";
+import InitialGreeting from "./InitialGreeting";
 
 export default function Chatbot() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -40,6 +41,7 @@ export default function Chatbot() {
         />
       </button>
       <ChatBox ref={chatRef} isChatOpen={isChatOpen} />
+      <InitialGreeting />
     </div>
   );
 }

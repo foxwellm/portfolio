@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, forwardRef } from "react";
+import { initialBotMessage } from "./constants";
 
 const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(
   ({ isChatOpen }, ref) => {
@@ -9,8 +10,7 @@ const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(
     >([
       {
         role: "bot",
-        content:
-          "Hello! Welcome to Matthew Foxwell's portfolio. How can I assist you today?",
+        content: initialBotMessage,
       },
     ]);
     const [input, setInput] = useState("");
@@ -80,7 +80,9 @@ const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(
               placeholder="Ask something..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+              onKeyDown={(e) =>
+                e.key === "Enter" && !isLoading && sendMessage()
+              }
             />
             <button
               onClick={sendMessage}
