@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const vectorStore = await getVectorStore();
-    const relevantDocs = await vectorStore.similaritySearch(message, 2);
+    const relevantDocs = await vectorStore.similaritySearch(message, 5);
     const context = relevantDocs.map((doc) => doc.pageContent).join("\n");
 
     const prompt = `Use the following resume data to answer the question:\n\n${context}\n\nQ: ${message}\nA:`;

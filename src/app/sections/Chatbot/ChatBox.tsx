@@ -53,11 +53,11 @@ const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(
       >
         <div className="bg-gray-900 rounded-xl shadow-lg flex flex-col border border-gray-300 border-gray-700 overflow-hidden">
           {/* Chat messages */}
-          <div className="overflow-y-auto max-h-80 p-4 gap-2 flex flex-col">
+          <div className="overflow-y-auto max-h-50 sm:max-h-80 p-4 gap-2 flex flex-col">
             {messages.map((msg, idx) => (
               <div
                 key={idx}
-                className={`p-3 max-w-[80%] rounded-lg text-sm text-black ${
+                className={`p-3 max-w-[90%] sm:max-w-[80%] rounded-lg text-sm text-black ${
                   msg.role === "user"
                     ? "bg-blue-200 self-end text-left"
                     : "bg-gray-200 self-start text-left"
