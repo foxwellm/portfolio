@@ -84,7 +84,7 @@ ListTaskTick         Available on Google Play and Apple Store
 
 
 Portfolio Website - github.com/foxwellm/portfolio        MatthewFoxwell.com
-[ TypeScript, Next.js, Tailwind CSS, Mapbox GL JS, Vercel ]
+[ TypeScript, Next.js, Tailwind CSS, Mapbox GL JS, Vercel, OpenAI, Langchain ]
 
 
-* Built a personal portfolio to showcase projects, resume, and a map with a responsive design, interactive animations, and fast serverless hosting on Vercel.
+* Developed to showcase projects, an AI chatbot for personalized user interactions, a map with animations, and a custom contact form. The site features responsive design, dynamic animations, and fast serverless hosting on Vercel.
