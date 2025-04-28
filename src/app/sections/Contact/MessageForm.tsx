@@ -1,41 +1,93 @@
-const email = process.env.NEXT_PUBLIC_EMAIL_ADDRESS;
+"use client";
+
+import { useState } from "react";
 
 export default function MessageForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (isSuccess) {
+      setIsSuccess(false);
+    }
+
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        console.error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+    setIsLoading(false);
+  };
+
   return (
-    <form
-      action={`https://formsubmit.co/${email}`}
-      method="POST"
-      target="_blank"
-      className="flex flex-col gap-4"
-    >
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <input
         type="text"
         name="name"
-        placeholder="Your Name"
+        disabled={isLoading}
+        value={formData.name}
+        onChange={handleChange}
         required
-        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+        placeholder="Name"
+        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500"
       />
+
       <input
         type="email"
         name="email"
-        placeholder="Your Email"
+        disabled={isLoading}
+        value={formData.email}
+        onChange={handleChange}
         required
-        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+        placeholder="Email"
+        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500"
       />
 
       <textarea
         name="message"
-        rows={5}
-        placeholder="Your Message"
+        disabled={isLoading}
+        value={formData.message}
+        onChange={handleChange}
         required
-        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
-      ></textarea>
+        placeholder="Message"
+        rows={4}
+        className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-1 focus:ring-sky-500"
+      />
 
       <button
         type="submit"
-        className="flex bg-sky-600 hover:bg-sky-500 items-center justify-center gap-4 text-white px-6 py-3 rounded-lg font-semibold transition"
+        disabled={isLoading}
+        className={`text-white py-3 rounded-lg transition 
+          ${isLoading ? "bg-blue-400" : isSuccess ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"}`}
       >
-        Send Message
+        {isLoading ? "Sending..." : isSuccess ? "Message Sent" : "Send Message"}
       </button>
     </form>
   );
