@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import getVectorStore from "../../../../lib/vector-store/get-vector-store";
-import { getFileText } from "../../../../lib/vector-store/get-file-text";
+import { getFileText, getVectorStore } from "./lib";
 
 const client = new OpenAI();
 

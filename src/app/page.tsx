@@ -1,18 +1,20 @@
-import About from "./sections/About/About";
-import Contact from "./sections/Contact/Contact";
-import Footer from "./sections/Footer";
-import HeroClientWrapper from "./sections/Hero/HeroClientWrapper";
-import Projects from "./sections/Projects/Projects";
-import StickyNavbar from "./sections/Navbar";
-import Chatbot from "./sections/Chatbot/Chatbot";
+import {
+  About,
+  Chatbot,
+  Contact,
+  Footer,
+  Hero,
+  Navbar,
+  Projects,
+} from "@/sections";
 
 const sections = ["home", "about", "projects", "contact"];
 
 export default function Main() {
   return (
     <>
-      <StickyNavbar sections={sections} />
-      <HeroClientWrapper />
+      <Navbar sections={sections} />
+      <Hero />
       <About />
       <Projects />
       <Contact />
