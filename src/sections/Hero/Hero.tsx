@@ -1,16 +1,19 @@
-export function HeroWrapper({
-  background,
-  scrollDownIndicator,
-}: {
-  background?: React.ReactNode;
-  scrollDownIndicator?: React.ReactNode;
-}) {
+"use client";
+
+import dynamic from "next/dynamic";
+import { Chevron } from "./components";
+// NOTE: Lazy load Vanta to ensure document is available
+const VantaBackground = dynamic(() => import("./components/VantaBackground"), {
+  ssr: false,
+});
+
+export function Hero() {
   return (
     <section
       id="home"
       className="relative w-full min-h-screen overflow-hidden flex flex-col justify-around items-center"
     >
-      {background}
+      <VantaBackground />
 
       <div className="relative z-10 gap-4 flex flex-col items-center justify-center text-center text-white px-4">
         <h1 className="text-5xl font-bold">
@@ -26,11 +29,7 @@ export function HeroWrapper({
           Download CV
         </a>
 
-        {scrollDownIndicator ? (
-          scrollDownIndicator
-        ) : (
-          <div className="w-40 h-40" />
-        )}
+        <Chevron />
       </div>
     </section>
   );

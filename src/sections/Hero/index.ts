@@ -1,1 +1,1 @@
-export { HeroClientWrapper as Hero } from "./HeroClientWrapper";
+export { Hero } from "./Hero";

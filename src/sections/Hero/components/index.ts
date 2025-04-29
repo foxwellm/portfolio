@@ -1,1 +1,1 @@
-export { HeroWrapper } from "./HeroWrapper";
+export { Chevron } from "./Chevron";

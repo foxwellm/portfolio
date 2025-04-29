@@ -4,7 +4,7 @@ import { useDocumentReady } from "@/hooks";
 import { useEffect, useRef } from "react";
 import WAVES from "vanta/dist/vanta.waves.min";
 
-export function VantaBackground() {
+export default function VantaBackground() {
   const vantaRef = useRef<HTMLDivElement | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const vantaEffectRef = useRef<any>(null);
