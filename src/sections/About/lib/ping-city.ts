@@ -49,7 +49,7 @@ export function pingCity(map: mapboxgl.Map, placeLived: PlaceLived) {
     const animationProgress = (time - startTime) / animationDuration;
     const circleSize = Math.min(maxPingSize, maxPingSize * animationProgress);
 
-    if (!map?.getLayer(layerId)) {
+    if (!map?.getLayer?.(layerId)) {
       // Map has gone out of View and pings have reset
       return;
     }
@@ -81,12 +81,12 @@ export function stopPings(map: mapboxgl.Map) {
 
   pingedCities.forEach((feature) => {
     const layerId = `ping-layer-${feature.properties.name}`;
-    if (map.getLayer(layerId)) {
+    if (map?.getLayer?.(layerId)) {
       map.removeLayer(layerId);
     }
   });
 
-  const source = map.getSource("ping-source") as GeoJSONSource | undefined;
+  const source = map?.getSource?.("ping-source") as GeoJSONSource | undefined;
   if (source) {
     source.setData({
       type: "FeatureCollection",

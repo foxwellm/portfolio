@@ -7,7 +7,7 @@ import { useObserveThreshold, useWindowResize } from "@/hooks";
 import { useHighlightAndPan } from "../hooks";
 import { addMapLayers } from "../lib";
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+import "mapbox-gl/dist/mapbox-gl.css";
 
 export function LivedMap() {
   const mapContainerRef = useRef<HTMLDivElement>(null);
@@ -18,6 +18,8 @@ export function LivedMap() {
   useHighlightAndPan(mapRef.current, isContainerInView);
 
   useEffect(() => {
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+
     if (!mapContainerRef.current) return;
 
     const map = new mapboxgl.Map({

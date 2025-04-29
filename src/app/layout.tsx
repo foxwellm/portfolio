@@ -34,10 +34,6 @@ export default function RootLayout({
           src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
           defer
         />
-        <link
-          href="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.css"
-          rel="stylesheet"
-        ></link>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]`}
