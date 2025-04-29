@@ -1,9 +1,9 @@
 "use client";
 
-import { useObserveThreshold } from "@/hooks";
 import Image from "next/image";
 import { useRef } from "react";
 
+import { useObserveThreshold } from "@/hooks";
 export function PhoneDisplay() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isContainerInView = useObserveThreshold(containerRef);

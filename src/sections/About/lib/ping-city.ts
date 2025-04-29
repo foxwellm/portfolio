@@ -1,5 +1,6 @@
 import { Feature, Point } from "geojson";
 import { GeoJSONSource } from "mapbox-gl";
+
 import { PlaceLived } from "../types";
 
 type PingFeature = Feature<Point, { name: string }>;

@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
 import { LngLatLike } from "mapbox-gl";
-import { PlaceLived } from "../types";
+import { useEffect, useRef } from "react";
+
 import { placesLived } from "../constants";
 import { pingCity, startGlobeSpin, stopGlobeSpin, stopPings } from "../lib";
+import { PlaceLived } from "../types";
 
 const highlightedCountries: string[] = [];
 

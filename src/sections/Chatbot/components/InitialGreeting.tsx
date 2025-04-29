@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { initialBotMessage } from "../constants";
 
 export function InitialGreeting() {

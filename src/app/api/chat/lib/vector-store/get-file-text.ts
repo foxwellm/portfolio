@@ -1,5 +1,5 @@
-import path from "path";
 import fs from "fs";
+import path from "path";
 
 // NOTE: Currently only supports .txt and .md files
 export function getFileText(relativePath: string) {

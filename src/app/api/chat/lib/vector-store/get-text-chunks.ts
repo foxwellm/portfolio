@@ -1,4 +1,5 @@
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+
 import { getFileText } from "./get-file-text";
 
 export async function getTextChunks(filePath: string, documentType: string) {

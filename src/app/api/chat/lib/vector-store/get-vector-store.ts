@@ -1,7 +1,8 @@
 import { OpenAIEmbeddings } from "@langchain/openai";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { getTextChunks } from "./get-text-chunks";
 import type { Document } from "langchain/document";
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
+
+import { getTextChunks } from "./get-text-chunks";
 
 let vectorStoreInstance: MemoryVectorStore | null = null;
 

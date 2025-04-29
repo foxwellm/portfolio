@@ -1,9 +1,11 @@
 "use client";
 
-import chevronAnimation from "../animations/chevron.json";
-import { useEffect, useRef, useState } from "react";
-import { useObserveThreshold } from "@/hooks";
 import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
+
+import { useObserveThreshold } from "@/hooks";
+
+import chevronAnimation from "../animations/chevron.json";
 
 // NOTE: Lazy load Lottie to reduce initial bundle size
 const Lottie = dynamic(() => import("lottie-react"), {

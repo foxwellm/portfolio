@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useRef, forwardRef } from "react";
+import { forwardRef,useEffect, useRef, useState } from "react";
+
 import { initialBotMessage } from "../constants";
 
 const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(

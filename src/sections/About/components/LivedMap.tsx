@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import "mapbox-gl/dist/mapbox-gl.css";
+
 import mapboxgl from "mapbox-gl";
+import { useEffect, useRef } from "react";
 
 import { useObserveThreshold, useWindowResize } from "@/hooks";
+
 import { useHighlightAndPan } from "../hooks";
 import { addMapLayers } from "../lib";
-
-import "mapbox-gl/dist/mapbox-gl.css";
 
 export function LivedMap() {
   const mapContainerRef = useRef<HTMLDivElement>(null);

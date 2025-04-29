@@ -1,7 +1,8 @@
 "use client";
 
-import { useActiveSection } from "@/hooks";
 import { useEffect, useState } from "react";
+
+import { useActiveSection } from "@/hooks";
 
 export function Navbar({ sections }: { sections: string[] }) {
   const activeSection = useActiveSection(sections);

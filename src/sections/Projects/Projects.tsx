@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { PhoneDisplay } from "./components";
 
 export function Projects() {
