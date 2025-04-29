@@ -3,9 +3,15 @@
 import dynamic from "next/dynamic";
 import { Chevron } from "./components";
 // NOTE: Lazy load Vanta to ensure document is available
-const VantaBackground = dynamic(() => import("./components/VantaBackground"), {
-  ssr: false,
-});
+const VantaBackground = dynamic(
+  () =>
+    import("./components/VantaBackground").then(
+      (module) => module.VantaBackground
+    ),
+  {
+    ssr: false,
+  }
+);
 
 export function Hero() {
   return (
