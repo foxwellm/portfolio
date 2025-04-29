@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="flex flex-col items-center justify-evenly py-4 bg-gray-950 h-36 border-t border-white/10 text-gray-400 text-sm">
       <div className="flex gap-12">
         <a
-          href="https://github.com/foxwellm"
+          href={process.env.GITHUB}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-sky-400 transition"
@@ -19,7 +19,7 @@ export function Footer() {
           <span>GitHub</span>
         </a>
         <a
-          href="https://linkedin.com/in/foxwellmw"
+          href={process.env.LINKEDIN}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-sky-400 transition"
