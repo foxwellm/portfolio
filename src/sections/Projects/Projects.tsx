@@ -1,14 +1,57 @@
 import Image from "next/image";
 
-import { PhoneDisplay } from "./components";
+import { ExpenseTrackerDisplay, PhoneDisplay } from "./components";
 
 export function Projects() {
   return (
     <section
       id="projects"
-      className="flex py-32 lg:py-0 lg:min-h-[calc(100vh-4rem)] scroll-mt-16 bg-gray-950 text-white px-8"
+      className="flex flex-col py-32 space-y-32 scroll-mt-16 bg-gray-950 text-white px-8"
     >
-      <div className="flex flex-col lg:flex-row items-center w-full gap-16">
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-8">
+        <ExpenseTrackerDisplay />
+
+        <div className="lg:text-left max-w-md">
+          <h3 className="text-xl lg:text-2xl text-sky-400 font-bold mb-2">
+            <a
+              href="https://FoxwellExpenseTracker.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whitespace-nowrap cursor-pointer hover:underline"
+            >
+              FoxwellExpenseTracker.com
+            </a>
+          </h3>
+
+          <p className="text-gray-300 mb-4">
+            Next.js 15 / TypeScript expenses website that implements CRUD
+            functionality.
+          </p>
+
+          <div className="flex gap-8 mt-4 justify-center lg:justify-start">
+            <a
+              href="https://github.com/foxwellm/expense-tracker"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <Image
+                src="/projects/expense-tracker/github-mark-white.svg"
+                alt="GitHub Mark"
+                width={40}
+                height={20}
+              />
+              <Image
+                src="/projects/expense-tracker/GitHub_Logo_White.png"
+                alt="GitHub Logo"
+                width={100}
+                height={20}
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-8">
         <PhoneDisplay />
 
         <div className="lg:text-left max-w-md">
@@ -25,7 +68,7 @@ export function Projects() {
               rel="noopener noreferrer"
             >
               <Image
-                src="/projects/Apple.svg"
+                src="/projects/listtasktick/Apple.svg"
                 alt="Download on the App Store"
                 width={260}
                 height={20}

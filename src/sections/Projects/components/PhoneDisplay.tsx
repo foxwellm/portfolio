@@ -21,7 +21,7 @@ export function PhoneDisplay() {
         }`}
       >
         <Image
-          src="/projects/Example New.png"
+          src="/projects/listtasktick/Example New.png"
           alt="Example New"
           width={500}
           height={1000}
@@ -37,7 +37,7 @@ export function PhoneDisplay() {
         }`}
       >
         <Image
-          src="/projects/Example Note.png"
+          src="/projects/listtasktick/Example Note.png"
           alt="Example Note"
           width={500}
           height={1000}
@@ -51,7 +51,7 @@ export function PhoneDisplay() {
         }`}
       >
         <Image
-          src="/projects/Example Checklist.png"
+          src="/projects/listtasktick/Example Checklist.png"
           alt="Example Checklist"
           width={500}
           height={1000}
