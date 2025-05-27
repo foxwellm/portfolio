@@ -14,30 +14,26 @@ export function ExpenseTracker() {
   const isRightContainerInView = useObserveThreshold(rightContainerRef, 0);
 
   return (
-    <div className="flex flex-col lg:flex-row w-full">
-      {/* Left */}
+    <>
       <div
         ref={leftContainerRef}
         className="flex flex-1 flex-col justify-between gap-8 py-8"
       >
         <Info />
-        <div className="flex justify-center">
-          <div
-            className={`w-full max-w-[1000px] px-8 ${
-              isLeftContainerInView
-                ? "animate-fly-in-left-delay-500"
-                : "animate-fly-out-left-delay-500"
-            }`}
-          >
-            <VideoWebM fileName="laptop-demo" />
-          </div>
+        <div
+          className={`w-full max-w-[1000px] px-8 ${
+            isLeftContainerInView
+              ? "animate-fly-in-left-delay-500"
+              : "animate-fly-out-left-delay-500"
+          }`}
+        >
+          <VideoWebM fileName="laptop-demo" />
         </div>
       </div>
-      {/* Right */}
       <div ref={rightContainerRef} className="flex flex-1 justify-center p-8">
         <div className="flex items-center max-w-[1000px] gap-4">
           <div
-            className={`translate-y-4 ${
+            className={`md:translate-y-12 ${
               isRightContainerInView
                 ? "animate-fly-in-right-delay-500"
                 : "animate-fly-out-right-delay-500"
@@ -47,7 +43,7 @@ export function ExpenseTracker() {
           </div>
 
           <div
-            className={`-translate-y-4 ${
+            className={`md:-translate-y-8 ${
               isRightContainerInView
                 ? "animate-fly-in-right"
                 : "animate-fly-out-right"
@@ -57,6 +53,6 @@ export function ExpenseTracker() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
