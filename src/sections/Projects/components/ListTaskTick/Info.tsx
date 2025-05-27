@@ -5,13 +5,13 @@ import { InfoWrapper } from "../InfoWrapper";
 export function Info() {
   return (
     <InfoWrapper>
-      <h3 className="text-[1.75em] text-sky-400 font-bold text-center lg:text-left">
+      <h3 className="text-[1.75em] text-sky-400 font-bold">
         ListTaskTick
       </h3>
 
       <div className="flex flex-col text-gray-400 -mt-4">
         <span className="text-[0.75em] max-w-full text-gray-400">
-          [ Next.js, TypeScript, Material-UI, D3, Apollo Client, Jest ]
+          [ React Native, TypeScript ]
         </span>
       </div>
       <span className="text-[0.875em] text-gray-200 max-w-full">
