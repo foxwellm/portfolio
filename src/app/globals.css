@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030712;
+  --button-bg: #0369a1;
+  --button-bg-hover: #075985;
 }
 
 @theme inline {
@@ -19,13 +20,6 @@
   --breakpoint-3xl: 120rem;
   /* 2560px */
   --breakpoint-4xl: 160rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html,
@@ -109,6 +103,59 @@ button:hover {
 
 .animate-fly-out-left-delay-500 {
   animation: fly-out-left 0.5s ease-in forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fly-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-fly-in-right {
+  animation: fly-in-right 1s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fly-in-right-delay-250 {
+  animation: fly-in-right 1s ease-out forwards;
+  animation-delay: 0.25s;
+  opacity: 0;
+}
+
+.animate-fly-in-right-delay-500 {
+  animation: fly-in-right 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes fly-out-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.animate-fly-out-right {
+  animation: fly-out-right 0.5s ease-in forwards;
+}
+
+.animate-fly-out-right-delay-250 {
+  animation: fly-out-right 0.5s ease-in forwards;
+  animation-delay: 0.25s;
+}
+
+.animate-fly-out-right-delay-500 {
+  animation: fly-out-right 0.5s ease-in forwards;
   animation-delay: 0.5s;
 }
 
