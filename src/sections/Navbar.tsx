@@ -58,7 +58,7 @@ export function Navbar({ sections }: { sections: string[] }) {
       <a
         href="/MatthewFoxwellResume.pdf"
         download
-        className="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded-md text-sm transition duration-300 hidden md:block"
+        className="bg-sky-600 hover:bg-sky-500 text-white px-4 py-2 rounded-md text-sm transition duration-300 hidden md:block"
       >
         Download CV
       </a>

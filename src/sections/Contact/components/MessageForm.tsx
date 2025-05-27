@@ -85,7 +85,7 @@ export function MessageForm() {
         type="submit"
         disabled={isLoading}
         className={`text-white py-3 rounded-lg transition 
-          ${isLoading ? "bg-blue-400" : isSuccess ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"}`}
+          ${isSuccess ? "bg-green-600 hover:bg-green-700" : "bg-sky-600 hover:bg-sky-500"}`}
       >
         {isLoading ? "Sending..." : isSuccess ? "Message Sent" : "Send Message"}
       </button>
