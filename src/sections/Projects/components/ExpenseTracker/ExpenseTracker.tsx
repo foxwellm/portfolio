@@ -9,9 +9,9 @@ import { VideoWebM } from "./VideoWebM";
 
 export function ExpenseTracker() {
   const leftContainerRef = useRef<HTMLDivElement>(null);
-  const isLeftContainerInView = useObserveThreshold(leftContainerRef, 0);
+  const isLeftContainerInView = useObserveThreshold(leftContainerRef);
   const rightContainerRef = useRef<HTMLDivElement>(null);
-  const isRightContainerInView = useObserveThreshold(rightContainerRef, 0);
+  const isRightContainerInView = useObserveThreshold(rightContainerRef);
 
   return (
     <>
@@ -30,10 +30,10 @@ export function ExpenseTracker() {
           <VideoWebM fileName="laptop-demo" />
         </div>
       </div>
-      <div ref={rightContainerRef} className="flex flex-1 justify-center p-8">
-        <div className="flex items-center max-w-[1000px] gap-4">
+      <div ref={rightContainerRef} className="flex flex-1 justify-center">
+        <div className="flex items-center max-w-[1000px] gap-8">
           <div
-            className={`md:translate-y-12 ${
+            className={`${
               isRightContainerInView
                 ? "animate-fly-in-right-delay-500"
                 : "animate-fly-out-right-delay-500"
@@ -43,7 +43,7 @@ export function ExpenseTracker() {
           </div>
 
           <div
-            className={`md:-translate-y-8 ${
+            className={`${
               isRightContainerInView
                 ? "animate-fly-in-right"
                 : "animate-fly-out-right"

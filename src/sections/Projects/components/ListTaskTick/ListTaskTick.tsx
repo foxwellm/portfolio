@@ -17,7 +17,7 @@ export function ListTaskTick() {
         <Info />
       </div>
 
-      <div className="flex flex-1 justify-center md:p-8">
+      <div className="flex flex-1 justify-center md:py-8">
         <div ref={containerRef} className="flex max-w-[1000px]">
           <div
             className={`-translate-y-4 md:-translate-y-8 translate-x-4 md:translate-x-12 ${
