@@ -2,33 +2,28 @@ import Image from "next/image";
 
 import { InfoWrapper } from "../InfoWrapper";
 
+function Header() {
+  return (
+    <a
+      href="https://FoxwellExpenseTracker.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whitespace-nowrap cursor-pointer hover:underline"
+    >
+      FoxwellExpenseTracker.com
+    </a>
+  );
+}
 export function Info() {
   return (
-    <InfoWrapper>
-      <h3 className="text-[1.75em] text-sky-400 font-bold">
-        <a
-          href="https://FoxwellExpenseTracker.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whitespace-nowrap cursor-pointer hover:underline"
-        >
-          FoxwellExpenseTracker.com
-        </a>
-      </h3>
-      <div className="flex flex-col text-gray-400 -mt-4">
-        <span className="text-[0.75em] max-w-full text-gray-400">
-          [ Next.js, TypeScript, Material-UI, D3, Apollo Client, Jest ]
-        </span>
-
-        <span className="text-[0.75em] max-w-full">
-          [ Vercel, Supabase Auth & DB, Postgres, GraphQL, Apollo Server ]
-        </span>
-      </div>
-      <span className="text-[0.875em] text-gray-200 max-w-full">
-        Expense Tracking website that implements CRUD functionality.
-      </span>
-
-      <div className="flex justify-around items-center">
+    <InfoWrapper
+      header={<Header />}
+      techStacks={[
+        "[ Next.js, TypeScript, Material-UI, D3, Apollo Client, Jest ]",
+        "[ Vercel, Supabase Auth & DB, Postgres, GraphQL, Apollo Server ]",
+      ]}
+      description=" Expense Tracking website that implements CRUD functionality."
+      links={
         <div className="flex gap-4">
           <a
             href="https://github.com/foxwellm/expense-tracker"
@@ -52,7 +47,7 @@ export function Info() {
             />
           </a>
         </div>
-      </div>
-    </InfoWrapper>
+      }
+    />
   );
 }
