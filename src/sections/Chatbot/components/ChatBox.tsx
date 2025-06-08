@@ -77,7 +77,7 @@ const ChatBox = forwardRef<HTMLDivElement, { isChatOpen: boolean }>(
           <div className="p-3 border-t border-gray-300 dark:border-gray-700 flex gap-2">
             <input
               type="text"
-              className="flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded"
+              className="flex-1 p-2 text-white border border-gray-300 dark:border-gray-600 rounded"
               placeholder="Ask something..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
