@@ -9,8 +9,8 @@ Built with modern tools and a clean UI/UX, the site includes a RAG-based AI chat
 ## 🖼️ Preview
 
 <p align="center">
-  <img src="./media/chat-demo.gif" alt="Chat demo" width="32%" style="aspect-ratio:1/1; margin-right: 6%;" />
-  <img src="./media/map.gif" alt="Map demo" width="32%" style="aspect-ratio:1/1;" />
+  <img src="./media/chat-demo.gif" alt="Chat demo" width="35%" style="aspect-ratio:1/1;" />
+  <img src="./media/map.gif" alt="Map demo" width="35%" style="aspect-ratio:1/1;" />
 </p>
 
 <p align="center">
