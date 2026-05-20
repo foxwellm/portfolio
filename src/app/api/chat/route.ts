@@ -26,18 +26,18 @@ export async function POST(req: NextRequest) {
   const { message } = await req.json();
 
   try {
-    const embeddings = new OpenAIEmbeddings();
-    const queryEmbedding = await embeddings.embedQuery(message);
+    const embeddingModel = new OpenAIEmbeddings({
+      model: "text-embedding-3-small",
+    });
+    const queryEmbedding = await embeddingModel.embedQuery(message);
 
     const supabase = await createServerSupabaseClient();
 
-    const { data: relevantDocs, error } = await supabase.rpc(
-      "match_documents",
-      {
-        query_embedding: JSON.stringify(queryEmbedding),
-        match_count: 5,
-      }
-    );
+    const { data: relevantDocs, error } = await supabase.rpc("match_documents", {
+      query_embedding: JSON.stringify(queryEmbedding),
+      match_count: 5,
+      match_threshold: 0.3,
+    });
 
     if (error) throw error;
 
@@ -56,9 +56,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ reply: response.choices[0].message.content });
   } catch (error) {
     console.error(error);
-    return NextResponse.json(
-      { error: "Failed to generate response" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to generate response" }, { status: 500 });
   }
 }

@@ -6,22 +6,19 @@ import path from "path";
 
 const supabase = createClient(
   process.env.SUPABASE_URL!,
-  process.env.SUPABASE_PRIVATE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_PRIVATE_SERVICE_ROLE_KEY!,
 );
 
-const embeddingModel = new OpenAIEmbeddings();
+const embeddingModel = new OpenAIEmbeddings({
+  model: "text-embedding-3-small",
+});
 
 function getFileHash(content: string): string {
   return crypto.createHash("sha256").update(content).digest("hex");
 }
 
 async function run() {
-  const dataDir = path.join(
-    process.cwd(),
-    "scripts",
-    "vector-store",
-    "documents"
-  );
+  const dataDir = path.join(process.cwd(), "scripts", "vector-store", "documents");
   const filenames = fs.readdirSync(dataDir);
 
   for (const filename of filenames) {
@@ -38,9 +35,7 @@ async function run() {
 
       if (error) throw error;
 
-      const alreadyIndexed = existingDocs?.some(
-        (doc) => doc.metadata.hash === hash
-      );
+      const alreadyIndexed = existingDocs?.some((doc) => doc.metadata.hash === hash);
 
       if (alreadyIndexed) {
         console.log(`✅ Skipped ${filename} — no changes`);
@@ -48,10 +43,7 @@ async function run() {
       }
 
       // Delete existing filename before re ingesting
-      await supabase
-        .from("documents")
-        .delete()
-        .eq("metadata->>filename", filename);
+      await supabase.from("documents").delete().eq("metadata->>filename", filename);
 
       const metadata = {
         filename,
